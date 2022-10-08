@@ -1,0 +1,63 @@
+\begin{frame}[fragile,allowframebreaks]{HDU 2973 YAPTCHA}
+	\label{cgrunt:example:hdu2973}
+
+	\textbf{题目描述}
+
+	The math department has been having problems lately. Due to immense amount of unsolicited automated programs which were crawling across their pages, they decided to put Yet-Another-Public-Turing-Test-to-Tell-Computers-and-Humans-Apart on their webpages. In short, to get access to their scientific papers, one have to prove yourself eligible and worthy, i.e. solve a mathematic riddle
+
+	\begin{equation}
+		S_n=\sum_{k=1}^n\left[\frac{(3k+6)!+1}{3k+7}-\left[\frac{(3k+6)!}{3k+7}\right]\right]
+	\end{equation}
+
+	However, the test turned out difficult for some math PhD students and even for some professors. Therefore, the math department wants to write a helper program which solves this task (it is not irrational, as they are going to make money on selling the program)
+
+	The task that is presented to anyone visiting the start page of the math department is as follows: given a natural \(n\), compute
+
+	where \([x]\) denotes the largest integer not greater than \(x\)
+
+	\textbf{输入格式}
+
+	The first line contains the number of queries \(t\) (\(t \leqslant 10^6\)). Each query consist of one natural number \(n\) (\(1 \leqslant n \leqslant 10^6\))
+
+	\textbf{输出格式}
+
+	For each \(n\) given in the input output the value of \(S_n\)
+
+	\textbf{样例输入}
+
+	\includecode[common]{hdu2973.in}
+
+	\textbf{样例输出}
+
+	\includecode[common]{hdu2973.ans}
+\end{frame}
+
+
+\begin{frame}{题解}
+	\only<1-2>{\begin{itemize}
+			\item<1-2> 若\(3k+7\)是质数, 则由定理 (\ref{cgrunt:th:wilson}) 可知
+				\[(3k+6)!\equiv-1\pmod{3k+7}\]
+
+				设\((3k+6)!+1=k(3k+7)\)
+
+				则
+				\[
+					\left\lfloor\frac{(3k+6)!+1}{3k+7}-\left\lfloor\frac{(3k+6)!}{3k+7}\right\rfloor\right\rfloor=\left\lfloor k-\left\lfloor k-\frac{1}{3k+7}\right\rfloor\right\rfloor=1
+				\]
+			\item<2> 若\(3k+7\)不是质数,则有\((3k+7)\mid(3k+6)!\), 即
+				\[(3k+6)!\equiv 0\pmod{3k+7}\]
+
+				设\((3k+6)!=k(3k+7)\)
+
+				则
+				\[
+					\left\lfloor\frac{(3k+6)!+1}{3k+7}-\left\lfloor\frac{(3k+6)!}{3k+7}\right\rfloor\right\rfloor=\left\lfloor k+\frac{1}{3k+7}-k\right\rfloor=0
+				\]
+		\end{itemize}}
+
+	\only<3->{因此
+
+	\[
+		\sum_{k=1}^n\left\lfloor\frac{(3k+6)!+1}{3k+7}-\left\lfloor\frac{(3k+6)!}{3k+7}\right\rfloor\right\rfloor=\sum_{k=1}^n[3k+7 \text{ is prime}]
+	\]}
+\end{frame}

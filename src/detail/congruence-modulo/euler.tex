@@ -1,0 +1,31 @@
+\begin{frame}[fragile]{Euler 定理}
+	\begin{theorem}[Euler 定理]
+		\label{cgrunt:th:euler}
+
+		若\((a,m)=1\), 则
+		\begin{equation}
+			a^{\varphi(m)}\equiv1\pmod m
+		\end{equation}
+	\end{theorem}
+\end{frame}
+
+
+\begin{frame}[fragile]{证明}
+	\only<1->{设
+	\[
+		\Bbb{Z}_m^*:=\{a\in\Bbb{Z}_m|(a,m)=1\}=\{a_{1},a_{2},\dots,a_{\varphi(m)}\}
+	\]}
+
+	\only<2->{由 \((a,m)=1\) 可知 \(\overline{a}\in\Bbb{Z}_m^*\), 从而
+	\[
+		\Bbb{Z}_m^*=\{aa_{1},aa_{2},\dots,aa_{\varphi(m)}\}
+	\]}
+
+	\only<3->{因此在\(\Bbb{Z}_m^*\)中,
+
+		\begin{equation}
+			\prod_{i=1}^{\varphi(m)}a_i=\prod_{i=1}^{\varphi(m)}aa_i=a^{\varphi(m)}\prod_{i=1}^{\varphi(m)}a_i
+		\end{equation}}
+
+	\only<4->{两边约去 \(\prod_{i=1}^{\varphi(m)}a_i\), 即得 \(a^{\varphi(m)}\equiv1\pmod m\)}
+\end{frame}

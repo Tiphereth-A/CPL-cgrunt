@@ -1,0 +1,23 @@
+\begin{frame}[fragile]{定义}
+	\only<1->{\begin{definition}[逆元 (模 \(m\) 剩余类下)]
+			\label{cgrunt:def:inv}
+			设\(m\)为正整数, \((a,m)=1\), 称\(a\) (在模 \(m\) 剩余类下)的逆元为方程\(ax\equiv 1\pmod m\)的解, 记作\(a^{-1}\)
+		\end{definition}}
+
+	\only<2->{可以看出, 模剩余类中的逆元相当于有理数域的倒数
+		\footnote{准确来说, 一个数在有理数域下的倒数是其在有理数域的逆元}}
+\end{frame}
+
+
+\begin{frame}{性质}
+	\label{cgrunt:prop:inv}
+
+	\begin{enumerate}
+		\item 若 \((a,m)=(b,m)=1\), 则\(a\equiv b\pmod m\iff a^{-1}\equiv b^{-1}\pmod m\)
+		      \footnote{等价于:
+			      \begin{itemize}
+				      \item 对一个数求逆元, 其结果唯一
+				      \item 方程\(ax\equiv 1\pmod m,~(a,m)=1\)的解唯一
+			      \end{itemize}}
+	\end{enumerate}
+\end{frame}

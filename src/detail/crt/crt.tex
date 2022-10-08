@@ -1,0 +1,50 @@
+\begin{frame}[fragile]{中国剩余定理}
+	\begin{theorem}[中国剩余定理]
+		\label{cgrunt:def:crt}
+
+		设 \(m_{1},\dots,m_{k}\) 是两两互素的正整数, 则对任意整数 \(b_{1},\dots,b_{k}\), 方程组
+
+		\begin{equation}
+			\label{cgrunt:eq:crt}
+			\begin{cases}
+				x\equiv b_i\pmod{m_i} \\
+				i=1,2,\dots,k
+			\end{cases}
+		\end{equation}
+
+		必有解, 且其全部解模 \(\prod_{i=1}^k m_i\) 同余
+
+	\end{theorem}
+\end{frame}
+
+
+\begin{frame}{证明}
+	\only<1-4>{证明是构造性的, 令 \(M=\prod_{i=1}^km_i\), 我们首先尝试求解方程组
+		\[
+			\begin{cases}
+				x\equiv1\pmod{m_i} \\
+				x\equiv0\pmod{m_j}~(j\ne i)
+			\end{cases}
+		\]}
+
+	\only<2-4>{容易发现 \(x\mid M_i:=\frac{M}{m_i}\), 令\(x=M_iy\), 则可得到方程
+	\begin{equation}
+		M_iy\equiv1\pmod{m_i}
+	\end{equation}
+
+	显然 \(y\equiv M_i^{-1}\pmod{m_i}\)}
+	\only<3-4>{, 令 \(N_i=y\), 则 \(x=M_iN_i\)}
+
+	\only<4>{此时我们大胆猜想: 最后结果是
+		\begin{equation}
+			x\equiv\sum_{i=1}^kb_iM_iN_i\pmod M
+		\end{equation}
+
+		容易验证其确实是所求方程组的解, 令其为 \(A\)}
+
+	\only<5->{假设 \(x\equiv B\pmod M\) 也是所求方程组的解, 则有
+		\begin{equation}
+			A-B\equiv0\pmod{m_i},~i=1,2,\dots,k
+		\end{equation}
+		这说明方程组 (\ref{cgrunt:eq:crt}) 的全部解模 \(M\) 同余}
+\end{frame}
