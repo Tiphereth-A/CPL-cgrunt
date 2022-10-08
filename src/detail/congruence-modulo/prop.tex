@@ -1,0 +1,57 @@
+\begin{frame}[fragile]{性质}
+	\label{cgrunt:prop:cgrunt}
+
+	\only<1->{设\(a,b,c,d\in\Bbb{Z}\), \(m\in\Bbb{N}^*\), \(p\)为素数}
+
+	\begin{enumerate}
+		\item<2-> \(a\equiv a\pmod m\)
+		\item<3-> \(a\equiv b\pmod m\Longrightarrow b\equiv a\pmod m\)
+		\item<4-> \(a\equiv b\pmod m,b\equiv c\pmod m\Longrightarrow a\equiv c\pmod m\)
+		\item<5-> \(a\equiv b\pmod m,c\equiv d\pmod m\Longrightarrow a\pm c\equiv b\pm d\pmod m,ac\equiv bd\pmod m\)
+			\only<5->{\footnote{即: 在同余意义下, 加法, 减法和乘法保持封闭}}
+		\item<6-> \(ac\equiv bc\pmod m\Longrightarrow a\equiv b\pmod{~\frac{m}{(c,m)}}\), 特别地, 若\((c,m)=1\), 则\(a\equiv b\pmod{m}\)
+			\only<6->{\footnote{即: 在同余意义下, 除法保持封闭当且仅当模数为素数}}
+		\item<7-> \(a\equiv b\pmod m\Longrightarrow\forall d\mid m,a\equiv b\pmod d\)
+		\item<8-> \(a\equiv b\pmod m\iff ad\equiv bd\pmod{md}\)
+		\item<9-> \(a\equiv b\pmod{m_i},i=1,2,\dots,n\Longrightarrow a\equiv b\pmod{[\def\enum#1{m_{ #1}}\enum{1},\enum{2},\dots,\enum{n}]}\)
+		\item<10-> 令\(f(x)=\sum_{i=0}^na_ix^i,~a_1\in\Bbb{Z},i=0,1,\dots,n\), 则若\(a\equiv b\pmod m\), 则\(f(a)\equiv f(b)\pmod m\)
+	\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{性质 4 的证明}
+	\only<1->{由 \(a\equiv b\pmod m,c\equiv d\pmod m\) 可得 \(m\mid a-b\) 及 \(m\mid c-d\)}
+
+	\only<2->{于是
+		\[
+			\begin{cases}
+				m\mid (a-b)\pm(c-d)=(a\pm c)-(b\pm d) \\
+				m\mid (a-b)c+(c-d)b=ac-bd
+			\end{cases}
+		\]}
+
+	\only<3->{因此
+		\[
+			\begin{cases}
+				a\pm c\equiv b\pm d\pmod m \\
+				ac\equiv bd\pmod m
+			\end{cases}
+		\]}
+\end{frame}
+
+
+\begin{frame}[fragile]{性质 5 的证明}
+	\only<1->{由 \(ac\equiv bc\pmod m\) 可得 \(m\mid(a-b)c\)}
+	\only<2->{, 故有
+
+		\begin{equation}
+			\frac{m}{(c,m)}\bigg|(a-b)\frac{c}{(c,m)}
+		\end{equation}}
+
+	\only<3->{而 \((\frac{m}{(c,m)},\frac{c}{(c,m)})=1\), 故 \(\frac{m}{(c,m)}\mid a-b\), 即
+
+		\begin{equation}
+			a\equiv b\pmod{~\frac{m}{(c,m)}}
+		\end{equation}}
+\end{frame}

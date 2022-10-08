@@ -1,0 +1,49 @@
+\begin{frame}{求 {[}1,n{]} 内所有数模 m 的逆元}
+	\label{cgrunt:algo:inv-multi-seive}
+
+	\only<1->{首先, \(1\) 的逆元是 \(1\)}
+
+	\only<2->{然后考虑对 \(i\) 做带余除法 \(m=ki+j,j\in[0,i)\cap\Bbb{N}\), 有
+
+	\[
+		\begin{aligned}
+			ki+j   & \equiv0\pmod m                                        \\
+			i^{-1} & \equiv-kj^{-1}\pmod m                                 \\
+			i^{-1} & \equiv-\left(\frac{m}{i}\right)(m\bmod i)^{-1}\pmod m
+		\end{aligned}
+	\]}
+
+	\only<3->{\textbf{时间复杂度} \(O(n)\)}
+\end{frame}
+
+
+\begin{frame}[fragile]{实现}
+	\includecode[c++]{inverse_multi1.cpp}
+\end{frame}
+
+
+\begin{frame}{求任意 n 个数模 m 的逆元}
+	\label{cgrunt:algo:inv-multi-any}
+
+	\only<1->{对于任意\(n\)个数\(a_1,a_2,\dots,a_n\), 我们可以这样求出其逆元}
+
+	\begin{enumerate}
+		\item<2-> 令\(s_i=\prod_{j=1}^ia_j\)
+		\item<3-> 求出\(s_n\)的逆元, 记作\(v_n\)
+		\item<4-> 注意到 \[
+				\begin{cases}
+					v_{i-1}  & =v_ia_i     \\
+					a_i^{-1} & =v_is_{i-1}
+				\end{cases},i=1,2,\dots,n-1
+			\]
+
+			故\(a_1,a_2,\dots,a_n\)的逆元便可求得
+	\end{enumerate}
+
+	\only<5->{\textbf{时间复杂度} \(O(n+\log m)\)}
+\end{frame}
+
+
+\begin{frame}[fragile,allowframebreaks]{实现}
+	\includecode[c++]{inverse_multi2.cpp}
+\end{frame}

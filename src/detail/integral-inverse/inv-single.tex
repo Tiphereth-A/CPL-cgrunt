@@ -1,0 +1,29 @@
+\begin{frame}{基于扩展 Euclid 算法求单个数模 m 的逆元}
+	\label{cgrunt:algo:inv-single-exgcd}
+
+	\only<1->{我们要寻找不定方程\(ax+by=c\)的一组可行解}
+	\only<2->{, 此时我们令\(b=m\), \(c=(a,m)=1\), 则有 \(ax+my=1\), 即
+
+		\begin{equation}
+			ax\equiv 1\pmod m
+		\end{equation}}
+
+	\only<3->{这个\(x\)就是\(a\)的逆元}
+
+	\only<4->{\textbf{时间复杂度} \(O(\log m)\)}
+\end{frame}
+
+
+\begin{frame}{基于 Euler 定理求单个数模 m 的逆元}
+	\label{cgrunt:algo:inv-single-euler}
+
+	\only<1->{由 Euler 定理 (\ref{cgrunt:th:euler}) 可知
+
+		\begin{equation}
+			a^{\varphi(m)-1}\equiv a^{-1}\pmod m
+		\end{equation}}
+
+	\only<2->{故所求逆元即为\(a^{\varphi(m)-1}\)}
+
+	\only<3->{\textbf{时间复杂度} \(O(T(m)\log m)\), 其中 \(T(m)\) 为计算 \(\varphi(m)\) 的时间复杂度}
+\end{frame}

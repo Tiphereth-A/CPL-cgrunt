@@ -1,0 +1,28 @@
+\begin{frame}[fragile]{Wilson 定理}
+	\begin{theorem}[Wilson 定理]
+		\label{cgrunt:th:wilson}
+
+		\begin{equation}
+			(p-1)!\equiv-1\pmod p
+		\end{equation}
+	\end{theorem}
+\end{frame}
+
+
+\begin{frame}[fragile]{证明}
+	\only<1->{当\(p=2\)时, 定理显然成立, 以下设\(p\geqslant 3\),}
+
+	\only<2->{令
+		\[
+			\Bbb{Z}_p:=\{\overline{0},\overline{1},\dots,\overline{p-1}\}
+		\]
+		即证 \(\Bbb{Z}_p\setminus\{0\}\) 中所有元素之积为 \(\overline{-1}\)}
+
+	\only<3->{我们知道, \(\Bbb{Z}_p\setminus\{0\}\)中每个元素都是可逆的, 即\(a^{-1}\in\Bbb{Z}_p\setminus\{0\},~\forall a\in\Bbb{Z}_p\setminus\{0\}\)}
+
+	\only<4->{显然\(a^{-1}\)的逆元为\(a\), 而\(aa^{-1}=\overline{1}\), 故\(\Bbb{Z}_p\setminus\{0\}\)中彼此互逆的元素每对乘积为\(1\)}
+
+	\only<5->{之后考虑\(a=a^{-1}\)的情况, 此时有\(a^2=\overline{1}\), 即\(a=\overline{1}\)或\(a=\overline{-1}\)}
+
+	\only<6->{故\((p-1)!\equiv-1\pmod p\)}
+\end{frame}

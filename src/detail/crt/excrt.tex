@@ -1,0 +1,54 @@
+\begin{frame}{扩展中国剩余定理 (exCRT)}
+	\label{cgrunt:ssec:excrt}
+
+	\only<1-3>{为什么 CRT 要求模数必须两两互素?
+
+		因为我们在 CRT 的证明过程中即可发现, 其关键便是构造这样的方程组
+
+		\[
+			\begin{cases}
+				x\equiv1\pmod{m_i} \\
+				x\equiv0\pmod{m_j}~(j\ne i)
+			\end{cases}
+		\]}
+
+	\only<2-3>{此时的 \(x=M_iN_i\), \(M_i=\prod_{j=1,j\ne i}^km_j\), 而 \(N_i\) 是 \(M_i\) 关于 \(m_i\) 的 \textbf{逆元}}
+
+	\only<3>{我们知道, 如果一个整数 \(a\) 在模 \(m\) 意义下有逆元, 其前提之一便是 \((a,m)=1\), 在此处便是 \((M_i,m_i)=1\)
+
+		故由最大公约数的性质, 此处的 \(k\) 个模数 \(m_1,m_2,\dots,m_k\) 必须两两互素}
+
+	\only<4>{那么我们如何摆脱这个限制条件呢? 这就要求我们换一种构造方式}
+
+	\only<5>{我们观察下面的式子
+
+		\[
+			\begin{cases}
+				x\equiv b_1\pmod{m_1} \\
+				x\equiv b_2\pmod{m_2}
+			\end{cases}
+		\]}
+
+	\only<6->{由同余定义 (\ref{cgrunt:def:cgrunt}), 我们有
+
+		\[
+			\begin{cases}
+				m_1\mid x-b_1 \\
+				m_2\mid x-b_2
+			\end{cases}
+		\]
+
+		即存在整数 \(k_1,k_2\) 使得 \(x=m_1k_1+b_1=m_2k_2+b_2\)}
+
+	\only<7->{整理一下, 便有
+		\begin{equation}
+			m_1k_1-m_2k_2=b_2-b_1
+		\end{equation}
+
+		此时我们便可以通过 exgcd 解决了}
+	\only<8->{, 求出\(k_1,k_2\)之后便得到
+
+		\begin{equation}
+			x\equiv m_1k_1+b_1\equiv m_2k_2+b_2\pmod{[m_1,m_2]}
+		\end{equation}}
+\end{frame}
