@@ -1,4 +1,5 @@
 \usetheme[progressbar=frametitle,block=fill]{metropolis}
+\setbeamertemplate{theorems}[numbered]
 \RequirePackage{appendixnumberbeamer}
 
 \RequirePackage{xcolor}
@@ -29,8 +30,6 @@
 \RequirePackage{multirow}
 \RequirePackage{multicol}
 \RequirePackage{geometry}
-% \RequirePackage{pdflscape}
-% \RequirePackage[titles]{tocloft}
 
 \RequirePackage{pgfplots}
 \usepgfplotslibrary{dateplot}
@@ -52,10 +51,6 @@
 	\end{figure}
 }
 
-% User defined math command
-\newcommand{\lcm}{\operatorname{lcm}}
-\newcommand{\nequiv}{~{\equiv}\llap{/\,}~}
-\newcommand{\subjectto}{~s.t.~}
 
 % Code style
 \RequirePackage{listings}
@@ -113,6 +108,7 @@
 	language=Pascal
 }
 
+
 % Bib
 \newcommand{\listofbib}[1][references]{
 	\nocite{*}
@@ -120,8 +116,16 @@
 	\bibliography{bib/#1}
 }
 
+
 % Throrem
 \renewcommand\qedsymbol{$\blacksquare$}
+
+
+% User defined math command
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\nequiv}{~{\equiv}\llap{/\,}~}
+\newcommand{\subjectto}{~s.t.~}
+
 
 % Others
 \newcommand{\forcenewline}{\leavevmode\newline}
