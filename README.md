@@ -2,7 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/Tiphereth-A/CPL-cgrunt)
 
-My LaTeX lecture & slice about congruence modulo, powered by [metropolis](https://github.com/matze/mtheme)
+My LaTeX lecture & slice about congruence modulo & integral inverse & CRT, powered by [metropolis](https://github.com/matze/mtheme)
 
 ## Usage
 
